@@ -41,15 +41,15 @@
             </UFormGroup>
           </div>
           <UFormGroup label="貸款分期" class="mb-4" required>
-            <USelect
+            <UInput
+              type="number"
+              placeholder="請輸入要分幾年"
               v-model="formModel.year"
-              :options="[
-                { name: '20年', value: 20 },
-                { name: '30年', value: 30 },
-              ]"
-              option-attribute="name"
               size="xl"
-            />
+              step="1"
+            >
+              <template #trailing>年</template>
+            </UInput>
           </UFormGroup>
           <UFormGroup class="mb-4 md:basis-1/4">
             <UButton block size="lg" type="submit">計算</UButton>
